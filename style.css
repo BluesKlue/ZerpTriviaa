@@ -50,7 +50,7 @@ body {
 
 .main {
     min-height: 100vh;
-    background: url("./Imgs/ZWallPapper.png") no-repeat;
+    background-image: url("./Imgs/ZWallPapper.png") no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
