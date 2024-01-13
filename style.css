@@ -9,7 +9,7 @@
 
 body {
     color: orange;
-    background-image: url("./Imgs/ZWallPapper.jpeg");
+    background: url("./Imgs/ZWallPapper.jpeg");
     overflow: hidden;
 }
 
