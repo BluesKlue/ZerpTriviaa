@@ -8,7 +8,7 @@ const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
 const goHomeBtn = document.querySelector('.goHome-btn');
 let timeLeft = document.querySelector('.timer-left');
-let count = 8;
+let count = 10;
  
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -25,7 +25,7 @@ continueBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
     quizBox.classList.add('active');
-    const questionDuration = 8;
+    const questionDuration = 10;
     timerDisplay(questionDuration);
 
     showQuestions(0);
@@ -93,7 +93,7 @@ nextBtn.onclick = () => {
 
         nextBtn.classList.remove('active');
 
-        const questionDuration = 8; // Set the duration for each question (example: 10 seconds)
+        const questionDuration = 10; // Set the duration for each question (example: 10 seconds)
         clearInterval(countdown);
         timerDisplay(questionDuration);
     } 
