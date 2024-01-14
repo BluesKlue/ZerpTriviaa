@@ -3,11 +3,12 @@ const popupInfo = document.querySelector('.popup-info');
 const exitBtn = document.querySelector('.exit-btn');
 const main = document.querySelector('.main');
 const continueBtn = document.querySelector('.continue-btn');
-const timeleft = document.querySelector('.timeleft'); 
 const quizSection = document.querySelector('.quiz-section'); 
 const quizBox = document.querySelector('.quiz-box');
 const resultBox = document.querySelector('.result-box');
 const goHomeBtn = document.querySelector('.goHome-btn');
+let timeLeft = document.querySelector('.timer-left');
+let count = 8;
  
 startBtn.onclick = () => {
     popupInfo.classList.add('active');
@@ -24,10 +25,43 @@ continueBtn.onclick = () => {
     popupInfo.classList.remove('active');
     main.classList.remove('active');
     quizBox.classList.add('active');
+    const questionDuration = 8;
+    timerDisplay(questionDuration);
 
     showQuestions(0);
     questionCounter(1);
     headerScore();
+    quizDisplay(questionCount);
+    count = 10;
+    clearInterval(countdown);
+    timerDisplay();
+}
+
+const timerDisplay = (duration) => {
+    count = duration;
+
+    countdown = setInterval(() => {
+        count--;
+        timeLeft.textContent = `${count}s`;
+        
+        if (count <= 0) {
+            clearInterval(countdown);
+            showResultBox(); // Automatically move to the next question
+            nextQuestion();
+        }
+    }, 1000);
+}
+
+function initial() {
+    quizSection.innerHTML = '';
+    questionCount = 0;
+    scoreCount = 0;
+    scoreCount = 0;
+    count = 8;
+    clearInterval(countdown);
+    timerDisplay();
+    quizCreator();
+    quizDisplay(questionCount);
 }
 
 goHomeBtn.onclick = () => {
@@ -47,6 +81,7 @@ let questionNumber = 1;
 let userScore = 0;
 
 const nextBtn = document.querySelector('.next-btn');
+let countdown;
 
 nextBtn.onclick = () => {
     if (questionCount < questions.length - 1) {
@@ -57,6 +92,10 @@ nextBtn.onclick = () => {
         questionCounter(questionNumber);
 
         nextBtn.classList.remove('active');
+
+        const questionDuration = 8; // Set the duration for each question (example: 10 seconds)
+        clearInterval(countdown);
+        timerDisplay(questionDuration);
     } 
     else {
         showResultBox();
