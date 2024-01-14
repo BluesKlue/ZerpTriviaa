@@ -9,7 +9,7 @@
 
 body {
     color: orange;
-    background: orange;
+    background: #09001d;
     overflow: hidden;
 }
 
@@ -50,7 +50,7 @@ body {
 
 .main {
     min-height: 100vh;
-    background: url("./Imgs/ZWallPapper.png") no-repeat;
+    background: url("./Imgs/ZWallPaper.jpeg") no-repeat;
     background-size: cover;
     background-position: center;
     pointer-events: auto;
@@ -257,10 +257,18 @@ body {
     font-weight: 500;
 }
 
+.timer-div {
+    background: transparent;
+    width: auto;
+    border-radius: 3px;
+    color: rgb(48, 127, 223);
+}
+
 .quiz-header .header-score {
     background: orangered;
     border-radius: 3px;
     padding: 7px;
+    color: orange;
 }
 
 .quiz-box .question-text {
